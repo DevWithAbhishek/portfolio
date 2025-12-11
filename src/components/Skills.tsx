@@ -2,19 +2,24 @@ import { useState, useEffect, useRef } from 'react';
 
 // Skills data - easily editable
 const skillsData = [
-  { name: 'HTML', percentage: 95, icon: '🌐' },
-  { name: 'CSS', percentage: 90, icon: '🎨' },
-  { name: 'JavaScript', percentage: 88, icon: '⚡' },
-  { name: 'React', percentage: 85, icon: '⚛️' },
-  { name: 'Next.js', percentage: 80, icon: '▲' },
-  { name: 'TypeScript', percentage: 78, icon: '📘' },
-  { name: 'Tailwind CSS', percentage: 92, icon: '💨' },
-  { name: 'Node.js', percentage: 75, icon: '🟢' },
-  { name: 'Express', percentage: 72, icon: '🚂' },
-  { name: 'MongoDB', percentage: 70, icon: '🍃' },
-  { name: 'Git/GitHub', percentage: 85, icon: '🔀' },
-  { name: 'UI/UX', percentage: 80, icon: '✨' },
+  { name: 'HTML', percentage: 80, icon: '🌐' },   
+  { name: 'CSS', percentage: 78, icon: '🎨' },    
+  { name: 'JavaScript', percentage: 72, icon: '⚡' },  
+
+  { name: 'React', percentage: 60, icon: '⚛️' },     
+  { name: 'Next.js', percentage: 50, icon: '▲' },     
+
+  { name: 'TypeScript', percentage: 40, icon: '📘' }, 
+  { name: 'Tailwind CSS', percentage: 70, icon: '💨' },
+
+  { name: 'Node.js', percentage: 65, icon: '🟢' },     
+  { name: 'Express', percentage: 60, icon: '🚂' },     
+  { name: 'MongoDB', percentage: 70, icon: '🍃' },     
+
+  { name: 'Git/GitHub', percentage: 60, icon: '🔀' },  
+  { name: 'UI/UX', percentage: 56, icon: '✨' },        
 ];
+
 
 interface SkillBarProps {
   name: string;

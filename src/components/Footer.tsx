@@ -48,7 +48,7 @@ export const Footer = () => {
               CodeWithAbhishek
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-xs">
-              Crafting immersive, modern, and high-performance web experiences.
+              Crafting immersive, modern, high-performance web experiences built with precision, clarity, and intent.
             </p>
           </div>
 

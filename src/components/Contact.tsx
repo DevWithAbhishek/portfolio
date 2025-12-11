@@ -154,9 +154,8 @@ export const Contact = () => {
             <div>
               <h3 className="font-display text-2xl font-bold mb-4">Get In Touch</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm always excited to work on new projects and collaborate with creative minds. 
-                Whether you have a question, a project idea, or just want to say hello, 
-                feel free to reach out!
+                I’m always eager to take on meaningful projects and collaborate with teams who value clarity, speed, and great user experiences.
+                If you’re exploring an idea, need a developer who works with ownership, or simply want to start a conversation — I’d love to hear from you
               </p>
             </div>
 

@@ -8,7 +8,7 @@ const navLinks = [
   { name: 'Skills', href: '#skills', icon: Zap },
   { name: 'Services', href: '#services', icon: Briefcase },
   { name: 'Projects', href: '#projects', icon: FolderOpen },
-  { name: 'Testimonials', href: '#testimonials', icon: MessageSquare },
+  // { name: 'Testimonials', href: '#testimonials', icon: MessageSquare },
   { name: 'Contact', href: '#contact', icon: Mail },
 ];
 

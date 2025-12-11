@@ -5,24 +5,29 @@ const highlights = [
   {
     icon: Code2,
     title: 'Technologies',
-    description: 'HTML, CSS, JavaScript, React, Next.js, TypeScript, Tailwind, Node.js, Express, MongoDB, Git/GitHub',
+    description:
+      'Building with JavaScript, React, Next.js, TypeScript, Tailwind CSS, Node.js, Express, and MongoDB — with a strong focus on writing clean, scalable code.',
   },
   {
     icon: Zap,
     title: 'Focus Areas',
-    description: 'Performance, UI Engineering, Responsive Design, Unique Ideas',
+    description:
+      'High-performance engineering, UI precision, responsive design, and transforming raw ideas into polished, production-ready interfaces.',
   },
   {
     icon: Palette,
     title: 'Experience',
-    description: 'Hands-on projects and full-stack learning with real-world applications',
+    description:
+      'Practical experience through end-to-end projects — designing, developing, and deploying real applications that solve real problems.',
   },
   {
     icon: Brain,
     title: 'Specialties',
-    description: 'Problem-solving, clean UI, full-stack mindset',
+    description:
+      'Strong problem-solving mindset, ownership-driven execution, attention to detail, and a product-focused approach to full-stack development.',
   },
 ];
+
 
 export const About = () => {
   return (
@@ -33,8 +38,8 @@ export const About = () => {
           <div className="flex justify-center lg:justify-start">
             <div className="glow-frame animate-float">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-card to-muted overflow-hidden">
-                <img 
-                  src={avatar} 
+                <img
+                  src={avatar}
                   alt="Abhishek Kumar - Web Developer"
                   className="w-full h-full object-cover"
                 />
@@ -48,15 +53,17 @@ export const About = () => {
               About <span className="gradient-text">Me</span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                I'm Abhishek Kumar, a passionate web developer dedicated to creating exceptional digital experiences. My journey into web development started with a curiosity about how the web works, and it quickly evolved into a deep passion for building modern, performant applications.
+              <p> 
+                I’m Abhishek Kumar, a web developer focused on building fast, modern, and reliable digital experiences. What began as simple curiosity about how products are built on the web has grown into a deep commitment to engineering interfaces that feel intuitive, polished, and impactful.
               </p>
-              <p>
-                I specialize in crafting high-performance, visually striking web experiences using modern frontend technologies like JavaScript, React, Next.js, TypeScript, and Tailwind CSS. My focus is on creating interfaces that are not just functional, but truly memorable.
+              <p> 
+                I work extensively with JavaScript, React, Next.js, TypeScript, and Tailwind CSS to create high-performance frontend applications. My approach combines clean engineering practices with a strong eye for design, ensuring that every project delivers both technical quality and a standout user experience.
               </p>
-              <p>
-                Every project I take on is an opportunity to push boundaries and deliver real, impactful solutions. I believe in clean code, thoughtful design, and the power of technology to solve problems and create value.
+              <p> 
+                Although I’m early in my professional journey, I operate with the mindset of someone who builds for real users — focusing on performance, clarity, and long-term maintainability. I thrive in environments where ideas move fast and product decisions matter, making me a strong fit for startups and teams that value ownership and execution.
               </p>
+              <p> 
+                Every project I take on is treated as a chance to create meaningful impact — whether that’s improving usability, enhancing performance, or bringing a new concept to life with precision and creativity. I care deeply about building things that work beautifully, scale reliably, and deliver real value. </p>
             </div>
           </div>
         </div>

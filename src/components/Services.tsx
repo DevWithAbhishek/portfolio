@@ -4,22 +4,26 @@ const services = [
   {
     icon: Globe,
     title: 'Custom Web Development',
-    description: 'Tailored web solutions built from scratch to meet your unique business needs with clean, scalable code.',
+    description:
+      'I build fast, modern, and purpose-driven web solutions tailored to your product goals — with clean architecture, scalable code, and obsessive attention to detail.',
   },
   {
     icon: Layers,
-    title: 'Full Stack Web Applications',
-    description: 'End-to-end development of complex web applications with robust backends and intuitive frontends.',
+    title: 'Full-Stack Product Development',
+    description:
+      'From frontend interfaces to backend APIs and databases, I craft complete web applications that are reliable, performant, and ready to grow with your users.',
   },
   {
     icon: Layout,
-    title: 'Portfolio & Landing Pages',
-    description: 'Stunning, conversion-focused landing pages and portfolios that make a lasting first impression.',
+    title: 'Portfolio & High-Impact Landing Pages',
+    description:
+      'I design and develop visually striking, conversion-optimized landing pages and portfolios that communicate value clearly and leave a strong first impression.',
   },
   {
     icon: Sparkles,
-    title: 'UI-Focused, Animation-Rich Sites',
-    description: 'Immersive websites with smooth micro-animations and interactive elements that engage users.',
+    title: 'Interactive, UI-Led Web Experiences',
+    description:
+      'I specialize in polished interfaces with smooth micro-animations, refined interactions, and immersive visual details that elevate your brand and user experience.',
   },
 ];
 

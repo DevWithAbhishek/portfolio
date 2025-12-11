@@ -23,7 +23,7 @@ export const Hero = () => {
             <span className="gradient-text">Creative Web Developer</span>
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            Crafting immersive, modern, and high-performance web experiences that leave lasting impressions.
+            Transforming ideas into premium, high-performance digital experiences built with clarity, speed, and innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
