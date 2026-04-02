@@ -25,7 +25,7 @@ const contactLinks = [
 ];
 
 const openTo = [
-  'Remote Backend Roles',
+  'Remote / Hybrid / In - Office Backend Roles',
   'Node.js / TypeScript Teams',
   'Startups & Early-Stage Products',
   'API-First Products',
@@ -34,8 +34,8 @@ const openTo = [
 ];
 
 const quickFacts = [
-  { icon: MapPin, label: 'Location', value: 'Prayagraj, India · Remote Only' },
-  { icon: Clock, label: 'Available From', value: 'April 10, 2026 · Immediately' },
+  { icon: MapPin, label: 'Location', value: 'Gorakhpur, India · Remote / Hybrid / In - Office' },
+  { icon: Clock, label: 'Available From', value: 'April, 2026 · Immediately' },
 ];
 
 const values = [
@@ -77,7 +77,7 @@ export const Contact = () => {
               <div>
                 <h3 className="font-display text-2xl font-bold mb-3">Ready to Contribute</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  I'm fully available for remote backend roles from April 10, 2026. I'm looking for a fast-paced team that values correctness, clear engineering decisions, and systems that hold up in production — not just demos.
+                  I'm fully available for all backend roles. I'm looking for a fast-paced team that values correctness, clear engineering decisions, and systems that hold up in production — not just demos.
                 </p>
               </div>
               <div className="space-y-3">

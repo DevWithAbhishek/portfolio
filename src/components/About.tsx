@@ -63,7 +63,7 @@ export const About = () => {
                 I approach engineering with judgment, not just execution. In an era of AI-assisted development, I focus on what generated code can't provide: understanding trade-offs, designing for failure, and ensuring a system behaves correctly under concurrency, retries, and edge cases that only appear in production.
               </p>
               <p>
-                I'm looking for a remote backend role where correctness, clarity, and systems thinking are valued — a team that builds things that actually work reliably, not just things that demo well.
+                I'm looking for a backend role where correctness, clarity, and systems thinking are valued — a team that builds things that actually work reliably, not just things that demo well.
               </p>
             </div>
           </div>

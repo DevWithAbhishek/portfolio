@@ -16,7 +16,7 @@ export const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-up">
           <p className="text-muted-foreground text-lg md:text-xl mb-4 font-medium">
-            Available for Remote · from April 04, 2026
+            Available for all Backend Dev roles.
           </p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
             Hi, I'm Abhishek —<br />
