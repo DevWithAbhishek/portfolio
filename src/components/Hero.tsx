@@ -16,14 +16,15 @@ export const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-up">
           <p className="text-muted-foreground text-lg md:text-xl mb-4 font-medium">
-            Hello World! 👋
+            Available for Remote · from April 04, 2026
           </p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
             Hi, I'm Abhishek —<br />
-            <span className="gradient-text">Creative Web Developer</span>
+            <span className="gradient-text">Backend Engineer</span>
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            Transforming ideas into premium, high-performance digital experiences built with clarity, speed, and innovation.
+            I build backend systems that stay correct under concurrency, retries, and real-world failure —
+            with a focus on transactional integrity, reliable payment flows, and production-grade API design.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a

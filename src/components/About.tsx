@@ -1,4 +1,4 @@
-import { Code2, Zap, Palette, Brain } from 'lucide-react';
+import { Code2, Zap, Layers, Brain } from 'lucide-react';
 import avatar from '@/assets/avatar.png';
 
 const highlights = [
@@ -6,25 +6,25 @@ const highlights = [
     icon: Code2,
     title: 'Technologies',
     description:
-      'Building with JavaScript, React, Next.js, TypeScript, Tailwind CSS, Node.js, Express, and MongoDB — with a strong focus on writing clean, scalable code.',
+      'Building with Node.js, TypeScript, PostgreSQL, Prisma, Redis, Next.js, Zod, PostGIS, Razorpay, and JWT — with a strong focus on correctness, schema-first design, and production reliability.',
   },
   {
     icon: Zap,
     title: 'Focus Areas',
     description:
-      'High-performance engineering, UI precision, responsive design, and transforming raw ideas into polished, production-ready interfaces.',
+      'API design, transactional consistency, idempotent payment systems, failure recovery, and building backend services that stay correct under real-world concurrency and retries.',
   },
   {
-    icon: Palette,
+    icon: Layers,
     title: 'Experience',
     description:
-      'Practical experience through end-to-end projects — designing, developing, and deploying real applications that solve real problems.',
+      'End-to-end ownership of production systems — from DB schema and state machines to webhook handling and reconciliation. Kridha (live, 61 endpoints) and FixMitraa are fully self-built.',
   },
   {
     icon: Brain,
     title: 'Specialties',
     description:
-      'Strong problem-solving mindset, ownership-driven execution, attention to detail, and a product-focused approach to full-stack development.',
+      'Systems thinking, engineering judgment beyond generated code, ownership-driven execution, and designing for failure — not just for the happy path.',
   },
 ];
 
@@ -40,7 +40,7 @@ export const About = () => {
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-card to-muted overflow-hidden">
                 <img
                   src={avatar}
-                  alt="Abhishek Kumar - Web Developer"
+                  alt="Abhishek Kumar - Backend Developer"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -53,17 +53,18 @@ export const About = () => {
               About <span className="gradient-text">Me</span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p> 
-                I’m Abhishek Kumar, a web developer focused on building fast, modern, and reliable digital experiences. What began as simple curiosity about how products are built on the web has grown into a deep commitment to engineering interfaces that feel intuitive, polished, and impactful.
+              <p>
+                I'm Abhishek Kumar, a backend-focused engineer with strong foundations in API design, data modeling, and system reliability. I graduated in Mechanical Engineering from NIT Allahabad in 2024, and taught myself backend engineering the way I believe it should be learned — by building production systems and confronting real problems.
               </p>
-              <p> 
-                I work extensively with JavaScript, React, Next.js, TypeScript, and Tailwind CSS to create high-performance frontend applications. My approach combines clean engineering practices with a strong eye for design, ensuring that every project delivers both technical quality and a standout user experience.
+              <p>
+                My work centers on the hard parts of backend development: transactional consistency, idempotent payment handling, strict state machines, and failure recovery. I've built Kridha — a live B2B + B2C marketplace with 61 REST endpoints, PostGIS-powered radius search, and two-phase Razorpay flows — and FixMitraa, a repair orchestration platform designed around webhook correctness and admin reconciliation.
               </p>
-              <p> 
-                Although I’m early in my professional journey, I operate with the mindset of someone who builds for real users — focusing on performance, clarity, and long-term maintainability. I thrive in environments where ideas move fast and product decisions matter, making me a strong fit for startups and teams that value ownership and execution.
+              <p>
+                I approach engineering with judgment, not just execution. In an era of AI-assisted development, I focus on what generated code can't provide: understanding trade-offs, designing for failure, and ensuring a system behaves correctly under concurrency, retries, and edge cases that only appear in production.
               </p>
-              <p> 
-                Every project I take on is treated as a chance to create meaningful impact — whether that’s improving usability, enhancing performance, or bringing a new concept to life with precision and creativity. I care deeply about building things that work beautifully, scale reliably, and deliver real value. </p>
+              <p>
+                I'm looking for a remote backend role where correctness, clarity, and systems thinking are valued — a team that builds things that actually work reliably, not just things that demo well.
+              </p>
             </div>
           </div>
         </div>

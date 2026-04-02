@@ -48,7 +48,7 @@ export const Footer = () => {
               CodeWithAbhishek
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-xs">
-              Crafting immersive, modern, high-performance web experiences built with precision, clarity, and intent.
+              Backend engineer building systems that stay correct under pressure — transactional, reliable, and production-ready.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border/50 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 CodeWithAbhishek. All rights reserved.
+            © 2026 CodeWithAbhishek. All rights reserved.
           </p>
         </div>
       </div>

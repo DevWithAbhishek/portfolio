@@ -1,29 +1,29 @@
-import { Globe, Layers, Layout, Sparkles } from 'lucide-react';
+import { Database, ShieldCheck, Webhook, ServerCog } from 'lucide-react';
 
 const services = [
   {
-    icon: Globe,
-    title: 'Custom Web Development',
+    icon: ServerCog,
+    title: 'Backend API Development',
     description:
-      'I build fast, modern, and purpose-driven web solutions tailored to your product goals — with clean architecture, scalable code, and obsessive attention to detail.',
+      'I design and build production-grade REST APIs with clean architecture, schema-first validation (Zod), structured error handling, and role-based access control — built to scale and easy to maintain.',
   },
   {
-    icon: Layers,
-    title: 'Full-Stack Product Development',
+    icon: Database,
+    title: 'Database Architecture & Modelling',
     description:
-      'From frontend interfaces to backend APIs and databases, I craft complete web applications that are reliable, performant, and ready to grow with your users.',
+      'From schema design and indexing strategies to transactional consistency and query optimization — I build PostgreSQL-backed data layers that handle concurrency correctly and never leave data in a partial state.',
   },
   {
-    icon: Layout,
-    title: 'Portfolio & High-Impact Landing Pages',
+    icon: Webhook,
+    title: 'Payment & Webhook Integration',
     description:
-      'I design and develop visually striking, conversion-optimized landing pages and portfolios that communicate value clearly and leave a strong first impression.',
+      'End-to-end payment system integration with Razorpay — including idempotent webhook processing, two-phase payment flows, refund logic, and admin reconciliation to ensure zero duplicate transactions.',
   },
   {
-    icon: Sparkles,
-    title: 'Interactive, UI-Led Web Experiences',
+    icon: ShieldCheck,
+    title: 'Auth Systems & Security',
     description:
-      'I specialize in polished interfaces with smooth micro-animations, refined interactions, and immersive visual details that elevate your brand and user experience.',
+      'Secure, production-ready authentication using Phone + PIN (Argon2), HttpOnly cookies, refresh token rotation with theft detection, and enumeration-safe signup — no localStorage, no shortcuts.',
   },
 ];
 
@@ -36,7 +36,7 @@ export const Services = () => {
             My <span className="gradient-text">Services</span>
           </h2>
           <p className="section-subtitle">
-            Comprehensive web development services to bring your vision to life
+            Backend engineering services focused on correctness, reliability, and systems that hold up in production
           </p>
         </div>
 

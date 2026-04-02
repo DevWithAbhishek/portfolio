@@ -57,10 +57,10 @@ export const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="section-title">
             Let's Build Something{' '}
-            <span className="gradient-text">Great Together</span>
+            <span className="gradient-text">Reliable Together</span>
           </h2>
           <p className="section-subtitle">
-            Have a project in mind? Let's discuss how we can bring your ideas to life.
+            Looking for a backend engineer who takes ownership, thinks in systems, and ships production-ready code? Let's talk.
           </p>
         </div>
 
@@ -154,8 +154,7 @@ export const Contact = () => {
             <div>
               <h3 className="font-display text-2xl font-bold mb-4">Get In Touch</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I’m always eager to take on meaningful projects and collaborate with teams who value clarity, speed, and great user experiences.
-                If you’re exploring an idea, need a developer who works with ownership, or simply want to start a conversation — I’d love to hear from you
+                I'm fully available for remote backend roles from April 10, 2026. If you're building something that demands transactional correctness, reliable payment flows, or well-architected APIs — I'd love to hear about it. I work with ownership, bring systems thinking to every problem, and don't ship code I don't understand.
               </p>
             </div>
 

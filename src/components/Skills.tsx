@@ -2,22 +2,18 @@ import { useState, useEffect, useRef } from 'react';
 
 // Skills data - easily editable
 const skillsData = [
-  { name: 'HTML', percentage: 80, icon: '🌐' },   
-  { name: 'CSS', percentage: 78, icon: '🎨' },    
-  { name: 'JavaScript', percentage: 72, icon: '⚡' },  
-
-  { name: 'React', percentage: 60, icon: '⚛️' },     
-  { name: 'Next.js', percentage: 50, icon: '▲' },     
-
-  { name: 'TypeScript', percentage: 40, icon: '📘' }, 
-  { name: 'Tailwind CSS', percentage: 70, icon: '💨' },
-
-  { name: 'Node.js', percentage: 65, icon: '🟢' },     
-  { name: 'Express', percentage: 60, icon: '🚂' },     
-  { name: 'MongoDB', percentage: 70, icon: '🍃' },     
-
-  { name: 'Git/GitHub', percentage: 60, icon: '🔀' },  
-  { name: 'UI/UX', percentage: 56, icon: '✨' },        
+  { name: 'Node.js', percentage: 85, icon: '🟢' },
+  { name: 'TypeScript', percentage: 82, icon: '📘' },
+  { name: 'REST API Design', percentage: 88, icon: '🔗' },
+  { name: 'PostgreSQL', percentage: 80, icon: '🐘' },
+  { name: 'Prisma ORM', percentage: 82, icon: '💎' },
+  { name: 'Redis', percentage: 72, icon: '⚡' },
+  { name: 'Next.js', percentage: 75, icon: '▲' },
+  { name: 'Authentication & JWT', percentage: 80, icon: '🔐' },
+  { name: 'Payment Systems', percentage: 75, icon: '💳' },
+  { name: 'Zod / Validation', percentage: 85, icon: '🛡️' },
+  { name: 'PostGIS / Spatial', percentage: 62, icon: '🗺️' },
+  { name: 'Git / GitHub', percentage: 75, icon: '🔀' },
 ];
 
 
@@ -38,29 +34,29 @@ const SkillBar = ({ name, percentage, icon, index }: SkillBarProps) => {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          
+
           // Delay based on index for staggered effect
           const delay = index * 80;
-          
+
           setTimeout(() => {
             const duration = 1500;
             const startTime = Date.now();
-            
+
             const animate = () => {
               const elapsed = Date.now() - startTime;
               const progress = Math.min(elapsed / duration, 1);
-              
+
               // Easing function for smooth deceleration
               const easeOut = 1 - Math.pow(1 - progress, 3);
               const currentValue = Math.round(easeOut * percentage);
-              
+
               setDisplayValue(currentValue);
-              
+
               if (progress < 1) {
                 requestAnimationFrame(animate);
               }
             };
-            
+
             requestAnimationFrame(animate);
           }, delay);
         }
@@ -110,7 +106,7 @@ export const Skills = () => {
             My <span className="gradient-text">Skills</span>
           </h2>
           <p className="section-subtitle">
-            A comprehensive toolkit for building modern, high-performance web applications
+            A backend-focused toolkit built for correctness, reliability, and production-grade systems
           </p>
         </div>
 
