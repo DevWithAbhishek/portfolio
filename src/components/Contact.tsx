@@ -29,61 +29,26 @@ export const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-
-
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-
-  //   // Create mailto link with form data
-  //   const mailtoLink = `mailto:abhishek@codewithabhishek.in?subject=${encodeURIComponent(
-  //     formData.subject
-  //   )}&body=${encodeURIComponent(
-  //     `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-  //   )}`;
-
-  //   window.location.href = mailtoLink;
-
-  //   toast({
-  //     title: 'Opening email client...',
-  //     description: 'Your message is ready to send!',
-  //   });
-
-  //   setFormData({ name: '', email: '', subject: '', message: '' });
-  //   setIsSubmitting(false);
-  // };
-
-  // inside Contact component
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const resp = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+    // Create mailto link with form data
+    const mailtoLink = `mailto:abhishek@codewithabhishek.in?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
 
-      const data = await resp.json();
-      if (!resp.ok) throw new Error(data?.error || 'Unknown error');
+    window.location.href = mailtoLink;
 
-      toast({
-        title: 'Message sent',
-        description: 'Thanks! I will get back to you soon.',
-      });
+    toast({
+      title: 'Opening email client...',
+      description: 'Your message is ready to send!',
+    });
 
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (err) {
-      console.error(err);
-      toast({
-        title: 'Failed to send',
-        description: err.message || 'Please try again later.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(false);
   };
 
   return (
