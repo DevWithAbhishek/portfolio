@@ -1,71 +1,81 @@
-import { Github, Linkedin, Mail, MapPin, Clock, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Clock,
+  ArrowUpRight,
+  CheckCircle2,
+} from "lucide-react";
 
 const contactLinks = [
   {
-    name: 'Email',
+    name: "Email",
     icon: Mail,
-    label: 'abhishek@codewithabhishek.in',
-    url: 'mailto:abhishek@codewithabhishek.in',
-    description: 'Best for role discussions and project enquiries',
+    label: "abhishek@codewithabhishek.in",
+    url: "mailto:abhishek@codewithabhishek.in",
+    description: "Best for role discussions and project enquiries",
   },
   {
-    name: 'GitHub',
+    name: "GitHub",
     icon: Github,
-    label: 'github.com/DevWithAbhishek',
-    url: 'https://github.com/DevWithAbhishek',
-    description: 'Browse live projects, commits, and architecture decisions',
+    label: "github.com/DevWithAbhishek",
+    url: "https://github.com/DevWithAbhishek",
+    description: "Browse live projects, commits, and architecture decisions",
   },
   {
-    name: 'LinkedIn',
+    name: "LinkedIn",
     icon: Linkedin,
-    label: 'linkedin.com/in/devwithabhishek',
-    url: 'https://www.linkedin.com/in/devwithabhishek/',
-    description: 'Professional background and work history',
+    label: "linkedin.com/in/devwithabhishek",
+    url: "https://www.linkedin.com/in/devwithabhishek/",
+    description: "Professional background and work history",
   },
 ];
 
 const openTo = [
-  'Remote / Hybrid / In - Office Backend Roles',
-  'Node.js / TypeScript Teams',
-  'Startups & Early-Stage Products',
-  'API-First Products',
-  'Fintech & Payments',
-  'B2B SaaS',
+  "Remote / Hybrid / In - Office Backend Roles",
+  "Node.js / TypeScript Teams",
+  "Startups & Early-Stage Products",
+  "API-First Products",
+  "Fintech & Payments",
+  "B2B SaaS",
 ];
 
 const quickFacts = [
-  { icon: MapPin, label: 'Location', value: 'Gorakhpur, India · Remote / Hybrid / In - Office' },
-  { icon: Clock, label: 'Available From', value: 'April, 2026 · Immediately' },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Gorakhpur, India · Remote / Hybrid / In - Office",
+  },
+  { icon: Clock, label: "Available From", value: "Immediately" },
 ];
 
 const values = [
-  'I own what I ship — bugs included.',
-  'I read error logs before asking for help.',
-  'I design for failure, not just the happy path.',
-  'I write code I can explain line by line.',
+  "I own what I ship — bugs included.",
+  "I read error logs before asking for help.",
+  "I design for failure, not just the happy path.",
+  "I write code I can explain line by line.",
 ];
 
 export const Contact = () => {
   return (
     <section id="contact" className="py-24 md:py-32 relative spotlight">
       <div className="container mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="section-title">
-            Let's Build Something{' '}
+            Let's Build Something{" "}
             <span className="gradient-text">Reliable Together</span>
           </h2>
           <p className="section-subtitle">
-            Looking for a backend engineer who takes ownership, thinks in systems, and ships production-ready code? Let's talk.
+            Looking for a backend engineer who takes ownership, thinks in
+            systems, and ships production-ready code? Let's talk.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto space-y-10">
-
           {/* Top row: availability + open to */}
           <div className="grid md:grid-cols-2 gap-6">
-
             {/* Availability */}
             <div className="card-glass gradient-border p-8 space-y-6">
               <div className="flex items-center gap-2">
@@ -75,14 +85,22 @@ export const Contact = () => {
                 </span>
               </div>
               <div>
-                <h3 className="font-display text-2xl font-bold mb-3">Ready to Contribute</h3>
+                <h3 className="font-display text-2xl font-bold mb-3">
+                  Ready to Contribute
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  I'm fully available for all backend roles. I'm looking for a fast-paced team that values correctness, clear engineering decisions, and systems that hold up in production — not just demos.
+                  I'm fully available for all backend roles. I'm looking for a
+                  fast-paced team that values correctness, clear engineering
+                  decisions, and systems that hold up in production — not just
+                  demos.
                 </p>
               </div>
               <div className="space-y-3">
                 {quickFacts.map((fact) => (
-                  <div key={fact.label} className="flex items-center gap-3 text-sm">
+                  <div
+                    key={fact.label}
+                    className="flex items-center gap-3 text-sm"
+                  >
                     <fact.icon className="w-4 h-4 text-primary flex-shrink-0" />
                     <span className="text-muted-foreground">{fact.label}:</span>
                     <span className="font-medium">{fact.value}</span>
@@ -106,7 +124,10 @@ export const Contact = () => {
               </div>
               <div className="pt-2 border-t border-border/50 space-y-2.5">
                 {values.map((v) => (
-                  <div key={v} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                  <div
+                    key={v}
+                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     <span>{v}</span>
                   </div>
@@ -121,7 +142,7 @@ export const Contact = () => {
               <a
                 key={link.name}
                 href={link.url}
-                target={link.name !== 'Email' ? '_blank' : undefined}
+                target={link.name !== "Email" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 className="card-glass gradient-border p-6 group flex flex-col gap-4 hover:border-primary/40 transition-colors duration-300"
               >
@@ -132,8 +153,12 @@ export const Contact = () => {
                   <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                 </div>
                 <div>
-                  <p className="font-display font-semibold text-base mb-1">{link.name}</p>
-                  <p className="text-primary text-sm font-mono truncate">{link.label}</p>
+                  <p className="font-display font-semibold text-base mb-1">
+                    {link.name}
+                  </p>
+                  <p className="text-primary text-sm font-mono truncate">
+                    {link.label}
+                  </p>
                 </div>
                 <p className="text-muted-foreground text-xs leading-relaxed mt-auto">
                   {link.description}
@@ -141,7 +166,6 @@ export const Contact = () => {
               </a>
             ))}
           </div>
-
         </div>
       </div>
     </section>

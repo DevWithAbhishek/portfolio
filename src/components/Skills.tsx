@@ -1,101 +1,69 @@
-import { useState, useEffect, useRef } from 'react';
+import {
+  Lock,
+  Webhook,
+  RotateCcw,
+  MapPin,
+  ShieldCheck,
+  KeyRound,
+} from "lucide-react";
 
-// Skills data - easily editable
-const skillsData = [
-  { name: 'Node.js', percentage: 85, icon: '🟢' },
-  { name: 'TypeScript', percentage: 82, icon: '📘' },
-  { name: 'REST API Design', percentage: 88, icon: '🔗' },
-  { name: 'PostgreSQL', percentage: 80, icon: '🐘' },
-  { name: 'Prisma ORM', percentage: 82, icon: '💎' },
-  { name: 'Redis', percentage: 72, icon: '⚡' },
-  { name: 'Next.js', percentage: 75, icon: '▲' },
-  { name: 'Authentication & JWT', percentage: 80, icon: '🔐' },
-  { name: 'Payment Systems', percentage: 75, icon: '💳' },
-  { name: 'Zod / Validation', percentage: 85, icon: '🛡️' },
-  { name: 'PostGIS / Spatial', percentage: 62, icon: '🗺️' },
-  { name: 'Git / GitHub', percentage: 75, icon: '🔀' },
+// Only concepts with source-level verified evidence. See EVIDENCE_REGISTRY.md.
+const conceptsData = [
+  {
+    icon: Lock,
+    concept: "Pessimistic Locking (SELECT FOR UPDATE)",
+    where: "Kridha — inventory decrement inside checkout transaction",
+    problem:
+      "Concurrent buyers checking out the same limited stock must never oversell it.",
+    tradeoff:
+      "Row lock is held for the full transaction, so contention rises under heavy concurrent checkout on the same product — chosen over optimistic retry because checkout needs to resolve synchronously for UX.",
+  },
+  {
+    icon: Webhook,
+    concept: "Idempotent Webhook Processing",
+    where: "Kridha — Razorpay webhook receiver",
+    problem:
+      "Payment providers redeliver webhooks; duplicate delivery must never double-process a payment.",
+    tradeoff:
+      "Requires always returning 200 even on internal errors (to avoid retry storms), which means failures have to be caught by logging/alerting instead of HTTP status codes.",
+  },
+  {
+    icon: RotateCcw,
+    concept: "Refresh Token Family Rotation",
+    where: "Kridha and ShelfAPI — session/auth layer",
+    problem:
+      "Simple token rotation cannot detect theft: if a stolen token is used before the real user refreshes, the attacker's session looks legitimate.",
+    tradeoff:
+      "Requires tracking a session table per device/login and revoking a whole token family on reuse detection — more storage and complexity than stateless JWTs alone.",
+  },
+  {
+    icon: MapPin,
+    concept: "PostGIS Geospatial Search",
+    where: "Kridha — radius-based product discovery",
+    problem:
+      'Hyperlocal marketplace needs accurate "within N meters" search at India scale, not flat-plane approximation.',
+    tradeoff:
+      "Chosen over MongoDB's $geoWithin because PostGIS uses the WGS-84 ellipsoid (geodesic distance) rather than flat geometry — at the cost of committing to a relational database for what could otherwise be a document store.",
+  },
+  {
+    icon: ShieldCheck,
+    concept: "Runtime Validation at the Trust Boundary",
+    where: "Kridha and ShelfAPI — every API route",
+    problem:
+      "TypeScript types are erased at compile time; they cannot catch malformed data arriving over HTTP.",
+    tradeoff:
+      "Zod schemas duplicate the shape already described by TypeScript types, but that duplication is exactly what makes the boundary safe — one describes intent, the other verifies reality.",
+  },
+  {
+    icon: KeyRound,
+    concept: "Ownership-Scoped Authorization",
+    where: "Kridha and ShelfAPI — every resource query",
+    problem:
+      "A logged-in user must never read or modify another user's data by guessing or reusing an ID.",
+    tradeoff:
+      "Ownership checks are embedded directly in the WHERE clause of every query rather than a separate policy layer — simpler to reason about per-query, but repeats the same check across every route instead of centralizing it.",
+  },
 ];
-
-
-interface SkillBarProps {
-  name: string;
-  percentage: number;
-  icon: string;
-  index: number;
-}
-
-const SkillBar = ({ name, percentage, icon, index }: SkillBarProps) => {
-  const [displayValue, setDisplayValue] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-
-          // Delay based on index for staggered effect
-          const delay = index * 80;
-
-          setTimeout(() => {
-            const duration = 1500;
-            const startTime = Date.now();
-
-            const animate = () => {
-              const elapsed = Date.now() - startTime;
-              const progress = Math.min(elapsed / duration, 1);
-
-              // Easing function for smooth deceleration
-              const easeOut = 1 - Math.pow(1 - progress, 3);
-              const currentValue = Math.round(easeOut * percentage);
-
-              setDisplayValue(currentValue);
-
-              if (progress < 1) {
-                requestAnimationFrame(animate);
-              }
-            };
-
-            requestAnimationFrame(animate);
-          }, delay);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [percentage, index, hasAnimated]);
-
-  return (
-    <div ref={ref} className="group">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <span className="text-xl">{icon}</span>
-          <span className="font-medium">{name}</span>
-        </div>
-        <span className="text-muted-foreground text-sm font-mono tabular-nums">
-          {displayValue}%
-        </span>
-      </div>
-      <div className="h-3 rounded-full bg-muted overflow-hidden">
-        <div
-          className="h-full rounded-full progress-gradient transition-all duration-1000 ease-out relative"
-          style={{
-            width: hasAnimated ? `${percentage}%` : '0%',
-            transitionDelay: `${index * 80}ms`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-gradient" />
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export const Skills = () => {
   return (
@@ -103,22 +71,46 @@ export const Skills = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            My <span className="gradient-text">Skills</span>
+            Core <span className="gradient-text">Concepts</span>
           </h2>
           <p className="section-subtitle">
-            A backend-focused toolkit built for correctness, reliability, and production-grade systems
+            Not a technology list — where each concept was actually used, the
+            problem it solved, and the trade-off I accepted
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {skillsData.map((skill, index) => (
-            <SkillBar
-              key={skill.name}
-              name={skill.name}
-              percentage={skill.percentage}
-              icon={skill.icon}
-              index={index}
-            />
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {conceptsData.map((item) => (
+            <div
+              key={item.concept}
+              className="card-glass gradient-border rounded-xl p-6"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-base leading-tight">
+                    {item.concept}
+                  </h3>
+                  <p className="text-primary/80 text-xs font-mono mt-1">
+                    {item.where}
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                <p>
+                  <span className="text-foreground font-medium">Problem: </span>
+                  {item.problem}
+                </p>
+                <p>
+                  <span className="text-foreground font-medium">
+                    Trade-off:{" "}
+                  </span>
+                  {item.tradeoff}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

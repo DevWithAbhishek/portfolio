@@ -5,13 +5,16 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import imsImg from "@/assets/ims.png";
-import kridhaDemoVideo from "@/assets/videos/kridha-demo.mp4"
-import kridhaDemoThumbnail from "@/assets/kridha.png"
+import kridhaDemoVideo from "@/assets/videos/kridha-demo.mp4";
+import kridhaDemoThumbnail from "@/assets/kridha.png";
+import shelfApiImg from "@/assets/project-1.png";
 
 const projectsData = [
   {
     id: 1,
+    slug: "kridha",
     label: "Production Project · Live",
     title: "Kridha",
     subtitle: "B2B + B2C Self-Pickup Marketplace",
@@ -52,6 +55,7 @@ const projectsData = [
   },
   {
     id: 2,
+    slug: "ims",
     label: "Backend Engineering · In Active Development",
     title: "IMS",
     subtitle: "Production Incident Management System",
@@ -94,6 +98,43 @@ const projectsData = [
     demoUrl: null,
     liveUrl: null,
     codeUrl: "https://github.com/DevWithAbhishek/IMS",
+  },
+  {
+    id: 3,
+    slug: "shelfapi",
+    label: "Backend Engineering · Infra Completing This Week",
+    title: "ShelfAPI",
+    subtitle: "Document Vault REST API",
+    date: "07/2026 – Present",
+    isLive: false,
+    description:
+      "REST API for authenticated document management with file attachments — built to practice ownership-scoped authorization, token rotation, and cloud storage integration end-to-end.",
+    bullets: [
+      "Implemented JWT access + refresh token rotation with Argon2-hashed tokens and session-family reuse detection, applying the same theft-detection pattern proven in Kridha.",
+      "Built ownership-scoped document CRUD in NestJS with Prisma, using connectOrCreate for per-user tag deduplication and cascade deletes for referential integrity.",
+      "Layered request validation with Zod at the API boundary plus NestJS's global ValidationPipe, catching malformed input before it reaches business logic.",
+      "Centralized error handling via a global exception filter mapping custom error classes to HTTP status codes, with structured logging on every request.",
+      "Completing direct-to-S3 presigned uploads and an EC2 + Nginx production deployment this week — case study updates once verified.",
+    ],
+    stats: [
+      { value: "Argon2", label: "Token Hashing" },
+      { value: "Zod", label: "Validation" },
+      { value: "In Progress", label: "AWS Deploy" },
+    ],
+    tech: [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Zod",
+      "Argon2",
+      "Docker",
+      "AWS S3",
+    ],
+    image: shelfApiImg,
+    demoUrl: null,
+    liveUrl: null,
+    codeUrl: "https://github.com/DevWithAbhishek/ShelfAPI-backend",
   },
 ];
 
@@ -270,6 +311,13 @@ export const Projects = () => {
                     <FaGithub className="w-4 h-4" />
                     View Code
                   </a>
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="text-sm font-medium text-primary hover:underline flex items-center gap-1 self-center"
+                  >
+                    Read Case Study
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             </div>
