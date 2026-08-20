@@ -20,10 +20,10 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { name: "Home", href: "#home", icon: Home, isRoute: false },
   { name: "About", href: "#about", icon: User, isRoute: false },
-  { name: "Concepts", href: "#skills", icon: Zap, isRoute: false },
-  { name: "Services", href: "#services", icon: Briefcase, isRoute: false },
-  { name: "Projects", href: "#projects", icon: FolderOpen, isRoute: false },
   { name: "Engineering", href: "/engineering", icon: Wrench, isRoute: true },
+  { name: "Concepts", href: "#skills", icon: Zap, isRoute: false },
+  { name: "Projects", href: "#projects", icon: FolderOpen, isRoute: false },
+  { name: "Services", href: "#services", icon: Briefcase, isRoute: false },
   // { name: 'Testimonials', href: '#testimonials', icon: MessageSquare },
   { name: "Contact", href: "#contact", icon: Mail, isRoute: false },
 ];
