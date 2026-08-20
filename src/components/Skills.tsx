@@ -67,11 +67,12 @@ const conceptsData = [
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-24 md:py-32 relative spotlight">
+    <section id="concepts" className="py-24 md:py-32 relative spotlight">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            Core <span className="gradient-text">Concepts</span>
+            Engineering Concepts{" "}
+            <span className="gradient-text">in Practice</span>
           </h2>
           <p className="section-subtitle">
             Not a technology list — where each concept was actually used, the

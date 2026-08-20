@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
   {
@@ -19,18 +20,18 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: "Home", href: "#home", isRoute: false },
+  { name: "Projects", href: "#projects", isRoute: false },
+  { name: "Concepts", href: "#concepts", isRoute: false },
+  { name: "Decisions", href: "/engineering", isRoute: true },
+  { name: "Contact", href: "#contact", isRoute: false },
 ];
 
 export const Footer = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -44,11 +45,15 @@ export const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <a href="#home" className="font-display text-2xl font-bold gradient-text inline-block">
+            <a
+              href="#home"
+              className="font-display text-2xl font-bold gradient-text inline-block"
+            >
               CodeWithAbhishek
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-xs">
-              Backend engineer building systems that stay correct under pressure — transactional, reliable, and production-ready.
+              Backend engineer designing systems for correctness under
+              concurrency, retries, and real-world failure.
             </p>
           </div>
 
@@ -56,19 +61,29 @@ export const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-display font-semibold text-lg">Quick Links</h4>
             <nav className="flex flex-col gap-2">
-              {quickLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.href);
-                  }}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {quickLinks.map((link) =>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ),
+              )}
             </nav>
           </div>
 

@@ -5,7 +5,6 @@ import {
   Sun,
   Moon,
   Home,
-  User,
   Zap,
   Briefcase,
   FolderOpen,
@@ -13,16 +12,16 @@ import {
   Mail,
   Code2,
   Wrench,
+  FileDown,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", href: "#home", icon: Home, isRoute: false },
-  { name: "About", href: "#about", icon: User, isRoute: false },
-  { name: "Engineering", href: "/engineering", icon: Wrench, isRoute: true },
-  { name: "Concepts", href: "#skills", icon: Zap, isRoute: false },
   { name: "Projects", href: "#projects", icon: FolderOpen, isRoute: false },
+  { name: "Concepts", href: "#concepts", icon: Zap, isRoute: false },
+  { name: "Decisions", href: "/engineering", icon: Wrench, isRoute: true },
   { name: "Services", href: "#services", icon: Briefcase, isRoute: false },
   // { name: 'Testimonials', href: '#testimonials', icon: MessageSquare },
   { name: "Contact", href: "#contact", icon: Mail, isRoute: false },
@@ -112,6 +111,14 @@ export const Header = () => {
                 </a>
               ),
             )}
+            <a
+              href="/resume.pdf"
+              download="Abhishek_Kumar_Resume.pdf"
+              className="btn-outline-gradient text-foreground text-sm flex items-center gap-2 !py-2"
+            >
+              <FileDown className="w-4 h-4" />
+              Resume
+            </a>
             <button
               onClick={() => setIsDark(!isDark)}
               className="p-2 rounded-lg glass hover:bg-primary/10 transition-colors"
@@ -127,6 +134,14 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 lg:hidden">
+            <a
+              href="/resume.pdf"
+              download="Abhishek_Kumar_Resume.pdf"
+              className="p-2 rounded-lg glass hover:bg-primary/10 transition-colors"
+              aria-label="Download resume"
+            >
+              <FileDown className="w-5 h-5" />
+            </a>
             <button
               onClick={() => setIsDark(!isDark)}
               className="p-2 rounded-lg glass"
@@ -207,6 +222,14 @@ export const Header = () => {
                 </a>
               );
             })}
+            <a
+              href="/resume.pdf"
+              download="Abhishek_Kumar_Resume.pdf"
+              className="flex items-center gap-3 text-lg font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:pl-6 hover:text-primary text-primary"
+            >
+              <FileDown className="w-5 h-5" />
+              <span>Download Resume</span>
+            </a>
           </nav>
         </div>
       </header>

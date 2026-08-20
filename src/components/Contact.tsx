@@ -26,7 +26,7 @@ const contactLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    label: "linkedin.com/in/devwithabhishek",
+    label: "linkedin.com/in/abhishekkumar878",
     url: "https://www.linkedin.com/in/abhishekkumar878/",
     description: "Professional background and work history",
   },
