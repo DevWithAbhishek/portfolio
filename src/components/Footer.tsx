@@ -2,19 +2,19 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const socialLinks = [
   {
-    name: 'GitHub',
+    name: "GitHub",
     icon: Github,
-    url: 'https://github.com/DevWithAbhishek',
+    url: "https://github.com/DevWithAbhishek",
   },
   {
-    name: 'LinkedIn',
+    name: "LinkedIn",
     icon: Linkedin,
-    url: 'https://www.linkedin.com/in/devwithabhishek/',
+    url: "https://www.linkedin.com/in/abhishekkumar878/",
   },
   {
-    name: 'Email',
+    name: "Email",
     icon: Mail,
-    url: 'mailto:abhishek@codewithabhishek.in',
+    url: "mailto:abhishek@codewithabhishek.in",
   },
 ];
 
